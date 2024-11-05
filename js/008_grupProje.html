@@ -147,13 +147,13 @@
                         <img class="imgAvatar" src="${product.thumbnail}" alt="">
                         <label id="lblTitle"><a href="008_grupProje_urunDetay.html?id=${product.id}" target="_blank">${product.title}</a></label> 
                         <label id="lblDescription">${product.description}</label> 
-                        <label id="lblPrice">${product.price} TL</label>   
+                        <label id="lblPrice">$${product.price}</label>   
                         </div>
                     <div class="card-comment">
-                    
+                        
                         <label class="label-user">${product.reviews[0].reviewerName}</label><br>
                         <label class="label-comment">${product.reviews[0].comment}</label><br>
-                         <label class="label-user">${product.reviews[1].reviewerName}</label><br>
+                        <label class="label-user">${product.reviews[1].reviewerName}</label><br>
                         <label class="label-comment">${product.reviews[1].comment}</label>
                         
         

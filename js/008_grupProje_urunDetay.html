@@ -41,24 +41,36 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
     }            
     .section{width:104%;}
     .menu-items{padding-left:0;}
-}
+
+
+}   
+    .reviewerName{
+        display: inline-block;
+        font-weight: bolder;
+        padding-top: 10px;
+      
+    }
+    #reviewsContainer{
+        border-bottom: 1px solid black;
+    
+    }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div id="container" class="container">
         <div class="row">
            <div class="col-xs-4 item-photo">
-                <img style="max-width:100%;" src="https://picsum.photos/400/400" />
+                <img id="productImage" style="max-width:100%;" src="" />
             </div>
             <div class="col-xs-5" style="border:0px solid gray">
                
-                <h3 id="productTitle">Samsung Galaxy S4 I337 16GB 4G LTE Unlocked GSM Android Cell Phone</h3>    
-                <h5 id="productBrand" style="color:#337ab7">Samsung<small style="color:#337ab7"></small></h5>
+                <h3 id="productTitle"></h3>    
+                <h5 id="productBrand" style="color:#337ab7"><small style="color:#337ab7"></small></h5>
     
              
                 <h6 class="title-price"><small>Fiyat</small></h6>
-                <h3 id="productPrice" style="margin-top:0px;">399 TL</h3>
+                <h3 id="productPrice" style="margin-top:0px;"></h3>
     
             
                 <div class="section">
@@ -95,20 +107,19 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
                 <div style="width:100%;border-top:1px solid silver">
                     <p id="productDescription" style="padding:15px;">
                         <small>
-                        Stay connected either on the phone or the Web with the Galaxy S4 I337 from Samsung. With 16 GB of memory and a 4G connection, this phone stores precious photos and video and lets you upload them to a cloud or social network at blinding-fast speed. With a 17-hour operating life from one charge, this phone allows you keep in touch even on the go. 
-    
-                        With its built-in photo editor, the Galaxy S4 allows you to edit photos with the touch of a finger, eliminating extraneous background items. Usable with most carriers, this smartphone is the perfect companion for work or entertainment.
+                        
                         </small>
                     </p>
                 </div>
-                <div class="review-section">
-                    <small>
-                        <ul id="review-container">
-                            <li>Ahmet: Çok güzel ürün beğendim.</li>
-                            <li>Available on GSM, AT T, T-Mobile and other carriers</li>
-                        </ul>  
-                    </small>
-                </div>
+               
+                    <div class="review-section" id="reviewSection">
+                        <h4><b>Yorumlar</b></h4>
+                        <div id="reviewsContainer">
+                         
+                        </div>
+                    </div>
+                   
+               
             </div>		
         </div>
     </div>        
@@ -117,6 +128,74 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
 </html>
 
 <script>
+
+        const urlParams = new URLSearchParams(window.location.search);     
+        const productId = urlParams.get('id');
+
+            function getProductDetail(){
+
+            fetch('https://dummyjson.com/products/'+productId)
+            .then(data => data.json())
+            .then(product=>{
+                
+                document.getElementById('productImage').src = product.thumbnail;
+                document.getElementById('productTitle').textContent = product.title;
+                document.getElementById('productBrand').textContent = product.brand;
+                document.getElementById('productPrice').textContent = `$${product.price}`;
+                document.getElementById('productDescription').textContent = product.description;
+              
+                
+             
+                
+                product.reviews.forEach(element => {
+
+                    const reviewBlock = document.createElement('div');
+    
+
+                    
+                    const reviewerName = document.createElement('span');
+                    reviewerName.className = 'reviewerName'
+                    reviewerName.textContent = element.reviewerName;
+                    reviewBlock.appendChild(reviewerName);
+
+                    
+                    reviewBlock.appendChild(document.createElement('br'));
+
+                   
+                    const reviewText = document.createElement('span');
+                    reviewText.className = 'review'
+                    reviewText.textContent = element.comment;
+                    reviewBlock.appendChild(reviewText);
+
+                    
+                     reviewBlock.appendChild(document.createElement('br'));
+
+                 
+                     reviewsContainer.appendChild(reviewBlock);
+                   
+                    
+                });
+
+              
+
+
+            });
+
+            }
+           
+            getProductDetail();
+            
+
+
+
+
+
+
+
+
+
+
+
        $(document).ready(function(){
             //-- Click on detail
             $("ul.menu-items > li").on("click",function(){
