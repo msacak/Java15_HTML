@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /**
+         * GET isteği nasıl gönderilir?
+         * request: fetch(https://randomuser.me/api/?results=5)
+         * response: then(DATA BILGI GELIR)
+         * not: gelen text olarak gelir ,dönüştürmek ve kullanmak için then(data => data.json)
+         * gelen datayı kullanmak:
+         * .then(res=>{ Buraya kodlar gelecek})
+         * Hata oluşursa eğer -> catch() bloğu çalışır.
+         * fetch işleminden sonra çalışacaklar için 
+         * finally(()=>{yapılacak kodlar});
+         * 
+         * DİKKAT
+         * fetch isteği asenkron bir işlemdir, bu nedeniyle kodun akışını bozabilir. Buna göre kodlama yapmak gereklidir.
+         * 
+         */
+
+        
+        let gelenKullaniciSayisi = 0;
+        console.log('fetch isteği başladı...')
+
+        fetch('https://randomuser.me/api/?results=5')
+        .then(neGelmisBirBakayim=>neGelmisBirBakayim.json())
+        .then(res=>{
+            console.log(res);
+            gelenKullaniciSayisi=res.info.results;
+            console.log('Gelen kullanıcı sayısı = ',gelenKullaniciSayisi) //Bunu then içine yazmaszan istediğin sonucu alamazsın.
+        })
+        .catch(()=>console.log('Bir hata oluştu...'))
+        .finally(()=>console.log('Her istekten sonra ben çalışırım.'));
+    
+    </script>
+    
+</body>
+</html>

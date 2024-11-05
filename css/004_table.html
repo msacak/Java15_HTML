@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    
+
+      table {
+        width: 80%;
+        border-collapse: seperate;
+        margin: auto;
+      }
+      th,
+      td {
+        border: 1px solid brown;
+      }
+      th {
+        padding: 5px;
+        background-color: coral;
+      }
+      td {
+        padding: 3px;
+      }
+
+      tr:nth-child(even) {
+        background-color: lightgray; /* Tabloları bir dolu bir boş renklendirmek için*/
+      }
+      tr:hover {
+        background-color: rgb(105, 105, 244);
+        cursor: pointer;
+        transform: scale(1.05); /* Increase row size by 20% */
+        transition: transform 0.3s ease; /* Smooth transition */
+      }
+    </style>
+  </head>
+  <body>
+   
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>ad</th>
+            <th>telefon</th>
+            <th>email</th>
+            <th>yaş</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Muhammet</td>
+            <td>0-555-444-33-22</td>
+            <td>muhammet@gmail.com</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Ahmet</td>
+            <td>0-444-555-66-22</td>
+            <td>ahmet@gmail.com</td>
+            <td>27</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Burak</td>
+            <td>0-333-222-77-88</td>
+            <td>burak@gmail.com</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Gizem</td>
+            <td>0-222-333-11-00</td>
+            <td>gizem@gmail.com</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Şakir</td>
+            <td>0-555-444-33-22</td>
+            <td>şakir@gmail.com</td>
+            <td>29</td>
+          </tr>
+          <tr>
+            <td>006</td>
+            <td>Ronay</td>
+            <td>0-597-611-22-44</td>
+            <td>ronayım@gmail.com</td>
+            <td>31</td>
+          </tr>
+          <tr>
+            <td>007</td>
+            <td>Murat</td>
+            <td>0-536-444-33-22</td>
+            <td>murat@gmail.com</td>
+            <td>31</td>
+          </tr>
+          <tr>
+            <td>008</td>
+            <td>Raspunzel</td>
+            <td>0-525-4124-76-29</td>
+            <td>kıvırcık@gmail.com</td>
+            <td>65</td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </body>
+</html>

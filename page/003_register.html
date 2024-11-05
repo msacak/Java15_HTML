@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        div{
+            margin-bottom: 5px;
+        }
+        label{
+            display: block;
+            margin-bottom: 3px;
+        }
+        input{
+            width: 45%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form 
+        action="http://localhost:9090/v1/dev/user/register" 
+        method="post"> <!--Endpointlere atılacak istekler bu şekilde form html ile değil de daha çok js fetch ile yapılır...-->
+        <div>
+            <label for="username">username</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label for="email">E-Posta</label>
+            <input type="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Şifre</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <label for="repassword">Şifre Doğrulama</label>
+            <input type="password" name="repassword" required>
+        </div>
+        <div>
+            <button type="submit">Üye Ol</button>
+        </div>
+    </form>
+</body>
+</html>

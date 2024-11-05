@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Fetch</title>
+    <style>
+        div{
+            margin-bottom: 5px;
+        }
+        label{
+            display: block;
+            margin-bottom: 3px;
+        }
+        input{
+            width: 45%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>    
+        <div>
+            <label for="username">username</label>
+            <input type="text"  id="username" required>
+        </div>
+        <div>
+            <label for="email">E-Posta</label>
+            <input type="email"  id="email" required>
+        </div>
+        <div>
+            <label for="password">Şifre</label>
+            <input type="password"  id="password" required>
+        </div>
+        <div>
+            <label for="repassword">Şifre Doğrulama</label>
+            <input type="password"  id="repassword" required>
+        </div>
+        <div>
+            <button onclick="register()" type="submit">Üye Ol</button>
+        </div>        
+        <script>
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const repassword = document.getElementById('repassword');            
+            function register(){
+                    if(password.value !== repassword.value){
+                           alert('Şifreler uyuşmuyor lütfen kontrol ediniz.');
+                         
+                    }else{
+                        fetch('http://localhost:9090/v1/dev/user/register',
+                            {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    'username': username.value,
+                                    'email': email.value,
+                                    'password': password.value,
+                                    'repassword': repassword.value
+                                })
+                            }
+                        ).then(data => data.json())
+                        .then(data=> console.log(data));
+                    }
+            }         
+        </script>
+</body>
+</html>

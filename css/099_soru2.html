@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa Düzeni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .container{
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 95vh;
+        }
+        .header{
+            display: flex;
+            height: 15vh;
+            width: 70%;
+            background-color: lightcyan;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        .body{
+            display: flex;
+            flex-direction: row;
+            height: 80vh; 
+        }
+        .sidemenu{
+           
+            background-color: lightgray;
+            border-radius: 10px;
+            margin: 10px;
+          
+            flex: 2.5;
+        }
+        .inner-body{
+          
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            flex: 9.5;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-body{
+            background-color: lightgray;
+            border-radius: 10px;
+            margin: 10px;
+            width: 95%;
+            height: 80%;
+        }
+        .footer{
+            display: flex;
+            background-color: lightgray;
+            border-radius: 10px;
+            width: 95%;
+            height: 15%;
+            align-items: center;
+            justify-content: center;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        .list{
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            width: 90%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .list:hover{
+            background-color: lightblue;
+        }
+        i{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">HEADER</div>
+        <div class="body">
+            <div class="sidemenu">
+                <ul>
+                    <li class="list"><i class="fa-solid fa-house"></i> Birinci</li>
+                    <li class="list"><i class="fa-solid fa-house"></i> İkinci</li>
+                    <li class="list"><i class="fa-solid fa-house"></i> Üçüncü</li>
+                    <li class="list"><i class="fa-solid fa-house"></i> Dördüncü</li>
+                    <li class="list"><i class="fa-solid fa-house"></i> Beşinci</li>
+                </ul>
+            </div>
+            
+            <div class="inner-body">
+                <div class="main-body"></div>
+                <div class="footer">FOOTER</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

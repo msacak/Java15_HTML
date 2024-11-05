@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru-1 </title>
+</head>
+<body>
+
+    <script>
+        //Bir obje oluştur, bu obje ürün ile alakalı -> ürün objesi
+        /**
+         * id number
+         * ad string
+         * açıklama string
+         * fiyat number
+         * stok number
+         * kategori object
+         *  id
+         *  kategori_ad
+         *  parentId
+         *  
+         * */
+
+
+         let urun = {
+            id: 1,
+            ad: 'Toyota Corolla',
+            aciklama: '370000km kazasız sahibinden',
+            fiyat: 850_000,
+            stok: 16,
+            kategori: {
+                id: 1,
+                kategori_ad: 'Araba',
+                parentId: 0
+            }
+         }
+
+         console.log(urun);
+         console.log('************************')
+
+         /**
+          * Soru2
+          * result,
+          * code: number
+          * size: number
+          * page: number
+          * message: string
+          * data: jsonArray [] -> ürün Listesi
+          * ---- ürün -> id,ad,url,resim
+          * */
+
+          let urun1 = {
+            id: '1',
+            ad:'Elma',
+            url: 'urun.com/elma',
+            resim: 'elma-resim.jpg'
+          }
+
+          let urun2 = {
+            id: '2',
+            ad:'Ayva',
+            url: 'urun.com/ayva',
+            resim: 'ayva-resim.jpg'
+          } 
+          let urun3 = {
+            id: '3',
+            ad:'Armut',
+            url: 'urun.com/armut',
+            resim: 'armut-resim.jpg'
+          }
+
+          let urunListesi = [urun1,urun2,urun3];
+
+          let result = {
+            code: 200,
+            size: 15,
+            page: 67,
+            message: 'Görüntüleme başarılı',
+            data: urunListesi
+
+          }
+
+          console.log(result);
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döngüler</title>
+</head>
+<body>
+
+    <ol id="list">
+    </ol>
+
+
+
+    <script>
+        /**
+         * 
+         */
+        for(let isim=0;isim<5;isim++){
+            console.log(`Merhaba, benim adım ${isim}`);
+            
+        }
+
+        let isimListesi = ['Muhammet','Demet','Emin','Canan','Türkan'];
+        const oList = document.getElementById('list');
+        for(let i =0;i<isimListesi.length;i++){
+            console.log(isimListesi[i]);
+            oList.innerHTML+='<li style="margin: 5px; background-color:yellow;">'+isimListesi[i]+'</li>';
+            oList.setAttribute('style','color: red; border: 1px solid green;')
+            
+        }
+    </script>
+    
+</body>
+</html>

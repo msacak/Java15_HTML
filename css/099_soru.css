@@ -1,0 +1,108 @@
+.musteri-giris{
+    border: 1px solid red;
+    padding: 3px;
+}
+.musteri-listesi{
+    text-align: center;
+    margin-top: 5px;
+    border: 1px solid red;
+}
+.mb-3{
+    margin-bottom: 6px;
+}
+.form-label{
+    display: inline-block;
+    min-width: 120px;
+   
+}
+.form-input-text{
+    display: inline-block;
+    min-width: 50%;
+    background-color: antiquewhite;
+}
+.form-input-text:focus{
+    background-color: white;
+}
+.center{
+    text-align: center;
+}
+.btn{
+    width: 70%;
+    border: 1px solid dodgerblue;
+    padding: 5px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 5px;            
+}
+.btn:hover{
+    background-color: #C6E7FF;
+    color: black;
+}
+.btn:active{
+    background-color: #C000FF;
+}
+.user-card{
+    display: inline-block;
+    padding: 5px;
+    min-height: 50px;
+    width: 22%;
+    margin-top: 10px;
+}
+
+.content{
+     border: 1px solid lightgray;
+     min-height: 200px;
+     border-radius: 10px;
+     text-align: left;
+}
+
+.content:hover{
+    box-shadow: -8px 0px 26px -17px rgba(0,0,0,0.75);
+}
+
+.user-image{
+    width: 100%;
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;  
+}
+
+.kampanya-text{
+    background-color: rgb(242, 232, 255);
+    color: rgb(119,35,219);
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Peddana";
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 5px;
+
+}
+.product-text{
+    color: #484848;
+    font-size: 13px;
+    margin-left: 5px;
+}
+.checked {
+    color: orange;
+}
+
+.btn-sepet{
+    margin-left: 5px;
+    margin-top: 10px;  
+    display: none; 
+}
+
+.user-card:hover .btn-sepet{
+    display: block;
+}
+
+.like{       
+    padding-top: 5px;
+    width: 30px;
+    height: 25px;
+    background-color: lightgray;
+    border-radius: 30px ;
+    text-align: center;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Diziler</title>
+</head>
+<body>
+
+    <script>
+        let aracMarkalari = ['BMW','Audi','Mercedes','Vw'];
+        console.log(aracMarkalari);
+        let sonuc = aracMarkalari.push('Ferrari'); // push -> sona ekleme yapar.
+        console.log('Push sonucunda dönen değer = ',sonuc,' Dizinin yeni boyutu');
+        console.log(aracMarkalari);
+        sonuc = aracMarkalari.shift(); //Dizinin başından eleman siler.      
+        console.log('Shift sonucunda dönen değer = ',sonuc,' Dizinin yeni boyutu');
+        console.log(aracMarkalari);
+        sonuc = aracMarkalari.unshift('Jaguar');//Dizinin başına ekleme yapar.
+        console.log('unshift sonucunda dönen değer = ',sonuc,' Dizinin yeni boyutu');
+        console.log(aracMarkalari);
+        sonuc = aracMarkalari.pop();// Dizinin sonundan eleman siler
+        console.log('pop sonucunda dönen değer = ',sonuc,' Dizinin yeni boyutu');
+        console.log(aracMarkalari);
+        aracMarkalari.sort(); // a'dan z'ye diziyi sıralar
+        console.log(aracMarkalari);
+        aracMarkalari.reverse(); // diziyi ters çevirir, ters SIRALAMA YAPMAZ!! sadece ters çevirir.
+        console.log(aracMarkalari);
+
+        let eleman = aracMarkalari[2];
+        console.log('2.Dizi elemanı -> ',eleman);
+        let findIndex = aracMarkalari.indexOf('Jaguar');
+        console.log('Jaguar elemanının indeksi = ',findIndex);
+
+        aracMarkalari =['BMW','Audi','Mercedes','Vw','Volvo'];
+        let aracMarkalari1 =['BMW','Audi','Mercedes','Vw','Volvo'];
+
+        aracMarkalari.splice(1,3); // splice - > 1.indeksten başlayıp 3 eleman siler.
+        console.log(aracMarkalari);
+        aracMarkalari1.splice(2,3);
+        console.log(aracMarkalari1);
+
+        aracMarkalari =['BMW','Audi','Mercedes','Vw','Volvo'];
+        /**
+         * Dizinin içindeki değerleri okumak*/
+        for(let i =0;i<aracMarkalari.length;i++){
+            console.log(aracMarkalari[i]);
+        }
+        console.log('*********************');
+        aracMarkalari.forEach(data=>{
+            console.log(data);
+        });
+
+        /**
+         * DİKKAT !!!
+         * map -> bir dizi içerisindeki dataları dolaşmak için kullanılır ve her bir data için ayrıca değer dönüşü sağlayabilir. Böylece diziyi
+         * manipüle edebilirsiniz.
+         * forEach -> bir dizi içerisindeki dataları dolaşmak için kullanılır.
+         * 
+         * */
+         console.log('*********************');
+        let yeniDizi = aracMarkalari.map(data=>{
+            console.log(data);
+            return 'data = '+data;
+        });
+        console.log('yeni Dizi ->>> ',yeniDizi);
+        console.log('*********************');
+
+        //Dizi filtreleme
+        let filterArray = yeniDizi.filter(m=>m.includes('M'));
+        console.log('içinde m harfi olanlar ',filterArray);
+        
+    </script>
+    
+</body>
+</html>

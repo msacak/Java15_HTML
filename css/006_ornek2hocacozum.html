@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            height: 95vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .column{
+            border: 1px solid green;
+            margin: 10px;
+        }
+        .column-3{
+            flex: 3;
+        }
+        .column-9{
+            flex: 9;
+        }
+        .box-container{
+            display: flex;
+            flex-wrap:wrap;
+            flex-basis: 100%;
+        }
+        .box{
+            height: 200px;
+            border: 1px dotted gray;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .col-1{
+            /* 
+            1. 0 -> kutunun esnemeyeceğini bildirir.
+            2. 0 -> kutunun küçülmeyeceğini bildirir.
+            3. 8.33% ise tam container genişliğinin yüzdesel olarak ne kadar alanını
+            kaplayacağını bildirir.
+            */
+            flex:0 0 8.33%; 
+        }
+        .col-2{flex: 0 0 16.66%}
+        .col-3{flex: 0 0 25%}
+        .col-4{flex: 0 0 33.33%}
+        .col-5{flex: 0 0 41.66%}
+        .col-6{flex: 0 0 50%}
+        .col-7{flex: 0 0 58.33%}
+        .col-8{flex: 0 0 66.66%}
+        .col-9{flex: 0 0 75%}
+        .col-10{flex: 0 0 83.33%}
+        .col-11{flex: 0 0 91.66}
+        .col-12{flex: 0 0 100%}
+
+        @media(min-width: 576px){
+            .col-sm-6{
+                flex: 0 0 50%;
+            }
+            .col-sm-12{
+                flex: 0 0 100%;
+            }
+        }
+
+        
+        @media(min-width: 768px){
+            .col-md-3{
+                flex: 0 0 25%;
+            }
+            .col-md-6{
+                flex: 0 0 50%;
+            }
+            .col-md-12{
+                flex: 0 0 100%;
+            }
+        }
+        
+        @media(min-width: 992px){
+            .col-lg-2{
+                flex: 0 0 16.66%;
+            }
+            .col-lg-3{
+                flex: 0 0 25%;
+            }
+            .col-lg-6{
+                flex: 0 0 50%;
+            }
+            .col-lg-12{
+                flex: 0 0 100%;
+            }
+
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column column-3"></div>
+        <div class="column column-9">
+            <div class="box-container">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="box"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="box"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="box"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="box"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object</title>
+</head>
+<body>
+    
+
+    <script>
+        var urun = {
+            id: 1,
+            ad: 'şeker',
+            fiyat: 34,
+            stok: 100
+        };
+        console.log('ürün = ',urun);
+        console.log('ürün = '+urun);
+        console.log('ürün adı = ',urun.ad);
+        console.log('ürün fiyatı = ',urun.fiyat);
+
+        let musteriList = [
+            {
+                id: 5,
+                ad: 'Ahmet',
+                adres: 'Ankara',
+                iletisim: {
+                    ad: 'Ev adresi',
+                    adres: 'Ankara bir yerler',
+                    telefon: '0 555 66998'
+                } 
+            },
+            {
+                id: 78,
+                ad: 'Deniz',
+                adres: 'Denizli'
+            }
+        ];
+
+        console.log('1.müşteri adı = '+musteriList[0].ad)
+        console.log('2.müşteri adı = '+musteriList[1].ad);
+        console.log('1.müşterinin tel = '+musteriList[0].iletisim.telefon);
+        console.log('2.müşterinin tel = '+musteriList[1].iletisim); //undefined, iletisim.telefon yaparsan uygulama patlar(hata fırlatır)
+        console.log('2.müşterinin tel = '+musteriList[1].iletisim?.telefon); //Doğrusu bu -> ? Optional görevi görüyor javadaki gibi. varsa yazdır yoksa undefined de... ki program patlamasın....
+        
+        
+        
+        
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row; /** Row olunca tüm kutuyu bir satır gibi algılıyor **/
+            border: 2px red solid;
+            min-height: 400px;
+            justify-content: center;
+            align-items: center;
+           
+
+        }
+
+        .item{
+            border: 1px solid gray;
+            height: 80px;
+            width: 80px;
+            margin: 5px;
+            
+        }
+
+        .normal{
+            order: 1;
+        }
+
+        .important{
+            order: 0;
+        }
+        vip{
+            order: -1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item normal"><label>item-1</label></div>
+        <div class="item vip"><label>item-2</label></div>
+        <div class="item normal"><label>item-3</label></div>
+        <div class="item important" ><label>item-4</label></div>
+
+
+    </div>
+    
+</body>
+</html>

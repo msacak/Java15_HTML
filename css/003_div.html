@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /**
+        margin: bir elementin dış çeperlerinden olan uzaklıklarına verilen addır. [top,left,right,bottom]
+        border: bir elementin dört çevresinde bulunan kenarları ifade eder. Manipüle edilebilir.
+        padding: bir bileşenin kendi içerisindeki bileşenlerine olan uzaklığına denir.
+
+        NOT!!: padding ilgili bileşenin hacminin artmasına neden olur. Bu nedenle sayfa yapısının oranının bozabilir. Kullanırken hesaba katılması
+        gerekir.
+        **/
+    
+
+        div{
+            border: 1px solid red;
+            padding: 5px;
+            margin: 5px;
+        }
+        button{
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        .inputum{
+            border: 2px solid black;
+            padding: 5px;
+            width: 65%;
+        }
+        .makale-box{
+            border: 2px dotted green;
+            width: 400px;
+            height: 300px;
+            overflow:scroll
+        }
+    </style>
+</head>
+<body>
+
+    <div class="div1">
+        <input type="text" name="ad" id="ad" class="inputum">
+    </div>
+    <div class="div2">
+        <label >Muhammet Hoca ile ReactJS</label>
+    </div>
+
+    <div class="div3">
+        <label>Konu ve içeriklerin tam listesi</label>
+    </div>
+
+    <div class="makale-box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos quisquam hic quia, vero animi enim, ipsam corrupti tempora amet quaerat veniam? Nam, unde dolorem nihil non beatae placeat odit?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa commodi saepe unde architecto quo non officia alias nulla, quis id quaerat, esse explicabo, magni neque recusandae consequatur hic ad vero!
+        Ducimus ab quae neque eum quasi aliquam quam placeat quod necessitatibus! Libero voluptas laboriosam ratione tempore, voluptates inventore, ipsam rerum quae repellendus corrupti quod molestias itaque commodi obcaecati, perspiciatis eos?
+        Perspiciatis dolore doloremque a reiciendis nobis, enim tenetur eius numquam labore eligendi odit dicta, quam commodi distinctio itaque quos suscipit expedita aliquid facere necessitatibus doloribus nisi sit et. Maiores, libero!
+        Maxime, tempora! Adipisci ducimus iste distinctio ea. Eaque, velit. Aliquid sit quaerat quisquam ipsam quibusdam, explicabo facilis beatae accusamus saepe. Ab quae voluptatibus blanditiis fugiat corporis sapiente! Pariatur, obcaecati laudantium.
+        Vero quis, modi expedita reiciendis itaque aspernatur quibusdam laboriosam accusantium, atque odit voluptatibus, quam nisi possimus? Suscipit saepe vitae officiis doloremque. Reiciendis dignissimos illo at quia impedit inventore doloremque distinctio.</p>
+
+    </div>
+
+    <div>
+        <button type="button">Buradan çık</button>
+    </div>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+         .container{
+            display: flex;
+            flex-direction: column;
+        }
+        .header{
+            display: flex;
+            flex-direction: row;
+            min-height: 10vh;
+            
+            border-radius: 20px;
+            margin: 10px;
+        }
+        .body{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 12;
+            border: 1px solid maroon;
+            border-radius: 20px;
+            margin: 10px;
+            min-height: 70vh ;
+        }
+        .col-1{flex:1}.col-2{flex:2}.col-3{flex:3}.col-4{flex:4}.col-5{flex:5}
+        .col-6{flex:6}.col-7{flex:7}.col-8{flex:8}.col-9{flex:9}.col-10{flex:10}
+        .col-11{flex:11}.col-12{flex:12}
+        #textSearch{
+            margin: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid gray;       
+            flex: 9;            
+        }
+        .btn{
+            margin: 15px;
+            flex: 3;
+            border-radius: 15px;
+            border: 1px solid rgb(90, 90, 226);
+            background-color: rgb(90, 90, 226);
+            color: white;
+        }
+        .btn:active{
+            background-color: rgb(167, 167, 236);
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid burlywood;
+            height: 65vh;
+            border-radius: 10px;    
+            margin: 10px;    
+            flex: 20%;    
+        }
+        .card:hover{
+            box-shadow: 3px 6px 19px -9px rgba(0,0,0,0.75);
+            background-color: rgb(236, 241, 245);
+        }
+        .imgAvatar{
+            margin: 5px;
+            border-radius: 50%;
+            border: 1px dotted black;
+            max-height: 20vh;
+        }
+        label{
+            border: 1px solid rgb(122, 116, 53);
+            border-radius: 5px;
+            width: 95%;
+            padding: 2%;
+            margin-bottom: 2px;
+            font-size:smaller
+        }
+        .card-main{
+            
+            display: flex;
+            flex-direction: column;
+            height:655;
+    
+            padding: 10px;
+           
+        }
+        .card-comment{
+            border-top : 1px dotted gray;
+            height: 25%;
+            padding-top: 10px;
+        
+         
+            
+        }
+     
+        .label-comment{
+            margin-top:25px;
+            margin: 10px;
+            padding: 10px;
+            border: none; 
+        }
+        .label-user{
+            font-weight: bolder;
+            margin-top:25px;
+            margin: 10px;
+            padding: 10px;
+            border: none; 
+        }
+        a{  
+
+            color:inherit;
+            text-decoration: none;
+        }
+        a:hover{
+            font-weight: bolder;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <input type="text" id="textSearch" placeholder="Aramak istediğiniz ürünü giriniz">
+            <button class="btn" onclick="fetchData()">Ara</button>
+        </div>
+        <div class="body" id="body">
+
+        </div>
+    </div>
+
+    <script>
+
+
+      
+
+        function fetchData(){
+            const searchTitle = document.getElementById('textSearch').value;
+            const bodyDiv = document.getElementById('body');
+        fetch('https://dummyjson.com/products/search?q='+searchTitle)
+        .then(data=>data.json())
+        .then(res=>{
+            bodyDiv.innerHTML = '';
+            res.products.forEach(product=>{ 
+                bodyDiv.innerHTML += `   
+                <div class="card col-3" id="body" onclick='fetchProduct()'>
+                    <div class="card-main">
+                        <img class="imgAvatar" src="${product.thumbnail}" alt="">
+                        <label id="lblTitle"><a href="008_grupProje_urunDetay.html?id=${product.id}" target="_blank">${product.title}</a></label> 
+                        <label id="lblDescription">${product.description}</label> 
+                        <label id="lblPrice">${product.price} TL</label>   
+                        </div>
+                    <div class="card-comment">
+                    
+                        <label class="label-user">${product.reviews[0].reviewerName}</label><br>
+                        <label class="label-comment">${product.reviews[0].comment}</label><br>
+                         <label class="label-user">${product.reviews[1].reviewerName}</label><br>
+                        <label class="label-comment">${product.reviews[1].comment}</label>
+                        
+        
+                    </div>
+                </div>
+                
+                `
+            })
+        })
+        }
+
+        
+    </script>
+    
+</body>
+</html>

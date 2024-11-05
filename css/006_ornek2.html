@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+         
+            min-height: 400px;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            
+            min-height: 380px;
+            margin: 10px;
+        }
+        .column{
+         border: 1px solid blue;
+         min-height: 90px;
+         margin: 10px;
+         border-radius: 10px;
+         display: flex;
+         flex-direction: column;
+        }
+        .col-1{
+            flex:3;
+        }
+        .col-2{
+            flex:9;
+        }
+        .subrow-1{
+            display: flex;
+            flex-direction: row;
+          
+            margin: 10px;
+            min-height: 180px;
+        }
+        .subcol{
+          border: 1px solid blue;;  
+          flex: 1;
+          margin: 10px;
+          border-radius: 5px;
+        }
+        .subcol-1{
+            flex:4
+        }
+        .subcol-2{
+            flex:2
+        }
+        .subcol-3{
+            flex:3
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+       
+        <div class="row">
+            <div class="column col-1"></div>
+            <div class="column col-2">
+                <div class="subrow-1">
+                    <div class="subcol subcol-1"></div>
+                    <div class="subcol subcol-2"></div>
+                    <div class="subcol subcol-3"></div>
+                    <div class="subcol subcol-3"></div>
+                </div>
+                <div class="subrow-1">
+                    <div class="subcol subcol-1"></div>
+                    <div class="subcol subcol-2"></div>
+                    <div class="subcol subcol-3"></div>
+                    <div class="subcol subcol-3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

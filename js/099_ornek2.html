@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Örnek2</title>
+</head>
+<body>
+
+    <script>
+        let user = {
+            id: 5,
+            username: 'muhammed',
+            avatar: 'https://',
+            name: 'Muhammet HOCA'
+        }
+        let loginUser = {
+            code: 0,
+            data: '',
+            message: '',
+            success: false
+        }
+        console.log('login code... = ',loginUser.code)
+
+        fetch('http://localhost:9090/v1/dev/user/login',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: 'javascript_user',
+                password: 'Sifre123**'
+            })
+        }).then(data=>data.json())
+          .then(res=>console.log(res.code));
+    </script>
+    
+</body>
+</html>

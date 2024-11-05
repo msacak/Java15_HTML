@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+           
+            width: 60%;
+            height: 90vh;
+            margin-left: 20%;
+            overflow: scroll;
+        }
+        .post{
+            border: 1px solid gray;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+        }
+        .avatar{
+            flex:1;
+
+
+        }
+        .body{
+            flex:11;
+            margin-left: 5px;
+            flex-direction: row;
+        }
+        .avatar-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+        }
+        .post-title{
+            font-weight: bold;
+            font-size: 15px;
+
+        }
+        .post-body{
+            font-size:13px;
+        }
+        .post-icons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .p-icon{
+            display: flex;
+            flex: 1;
+           
+            height: 30px;
+            padding: 3px;
+            align-items: center;
+            justify-content: center;
+        }
+        span{
+            margin-left: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="root">
+    
+
+    </div>
+
+    <script>
+        const root = document.getElementById('root');
+        fetch('https://dummyjson.com/posts')
+        .then(res => res.json())
+        .then(data=>{
+            root.innerHTML = '';
+            data.posts.forEach(post=>{
+                console.log(post);
+                root.innerHTML += `
+      <!--POST START-->
+        <div class="post">
+            <div class="avatar">
+                <img class="avatar-img" src="https://picsum.photos/100/100" alt="">
+            </div>
+            <div class="body">
+                <div>
+                    <label class="post-title">${post.title}</label>
+                </div>
+                <div>
+                    <label class="post-body">${post.body}</label>
+
+                </div>
+                
+                <div class="post-icons">
+                    <div class="p-icon">
+                        <i class="fa-regular fa-heart"></i>     <span>${post.reactions.likes}</span>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-solid fa-retweet"></i>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-regular fa-heart"></i><span>${post.reactions.dislikes}</span>
+                    </div>
+                    <div class="p-icon">
+                        <i class="fa-solid fa-chart-column"></i><span>${post.views}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--POST END-->
+                `;
+            })
+        }); 
+    </script>
+    
+</body>
+</html>

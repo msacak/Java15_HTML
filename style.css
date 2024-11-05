@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    width: 50%;
+    height: auto;
+    border: 3px solid black;
+    text-align: center;
+    float: left;
+    min-height: 50vh;
+}

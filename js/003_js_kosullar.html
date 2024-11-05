@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koşullar</title>
+    <style>
+        div{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div>
+            <label for="ad">Adınızı giriniz</label>
+        </div>
+        <div>
+            <input type="text" name="ad" id="ad">
+        </div>
+        <div>
+            <button onclick="testEt()">Test Et.</button>
+        </div>
+    </div>
+
+   <script>
+            /**
+             *  if(condition)
+             *  if()..else
+             *  if()..else if()... else
+             * 
+             *  switch(value)
+             *    case A: break;
+             *    case B: break;
+             *    default: ;
+             * 
+             * */
+        function testEt(){
+            const ad = document.getElementById('ad').value;
+            if(ad.length <=3 || ad.length>64)
+                alert('Lütfen 3-64 karakter arasında bir ad giriniz.');
+        }
+   </script> 
+</body>
+</html>

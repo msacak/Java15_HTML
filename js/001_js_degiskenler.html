@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Değişkenler</title>
+</head>
+<body>
+    <h1>JS Değişkenler</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis facere velit unde mollitia blanditiis? Nisi, debitis dignissimos voluptas neque rem eius facilis, facere commodi harum distinctio ea minima quis explicabo.</p>
+    <script>
+        /**
+         * IO
+         * console.log('Merhaba');
+         * Javascript TypeSafe bir dil değildir.
+         * JS DataTypes
+         * var, let, const
+         * 
+         * */
+        let sayi = 5;
+        console.log('Değişken değeri = '+ sayi); //ifade ve sayı birleştirilir.
+        console.log("Değişken değeri = "+ sayi);
+        console.log('Değişken değeri = ', sayi);// ifade ayrı sayı ayrı çıktılanır.
+        const musteri = {
+            ad: 'Muhammet',
+            adres: 'Ankara'
+        }
+        console.log("Müşteri = "+musteri);
+        console.log("Müşteri = ",musteri); // Consoleda + ile , ayrımı ÖNEMLİ!!!
+
+        const adres = 'Ankara';
+        //adres = 'İzmir';  OLMAZ!!!
+        //Not: Bir html sayfası Java uygulaması gibi hata vermez. Hata html sayfasının yüklenmemesi
+        //şeklinde tezahür eder.
+
+        let ad = prompt('Lütfen adınızı giriniz');
+        console.log('adınız -> ',ad);
+        alert('DİKKATTT!!');
+        
+        
+        
+
+    </script>
+</body>
+</html>

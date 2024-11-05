@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+          
+            height: 800px;
+           
+        }
+        .col-1{
+            flex: 4;
+            border: 2px solid green;
+            border-radius: 10px;
+            margin: 5px;
+        
+        }
+        .col-2{
+           
+            flex:8;
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+        }
+        .box{
+            border: 2px solid blue;
+            flex: 4;
+            margin: 5px;
+            
+            
+        }
+        .box-1{
+            
+            flex:2;
+            border-radius: 10px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+            font-weight: bolder;
+            
+            
+        }
+        .box-2{
+            flex:6;
+            display:flex;
+            flex-direction: column;
+            border-radius: 10px;
+          
+        }
+        .ball{
+            border: 1px solid black;
+            height: 50px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            margin: 10px;
+        }
+        .ball-1{
+            display: flex;
+            flex-direction: row;
+            margin-top: 50px;
+            justify-content: left;
+            
+        }
+        .ball-2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 100px;
+            justify-content: center;
+           
+        
+           
+        }
+        .ball-3{
+            display: flex;
+            flex-direction: row; 
+            margin-top: 150px; /* align items kullanıp yap bunu!!!*/
+            justify-content: right;
+        }   
+           
+            
+           
+           
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="col-1"></div>
+        <div class="col-2">
+            <div class="box box-1">FLEX DIRECTION</div>  
+            <div class="box box-2">
+                <div class="ball-1">
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                    <div class="ball"></div>
+                </div>
+               <div class="ball-2">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>   
+               </div>
+               <div class="ball-3">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>   
+               </div>
+               
+
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

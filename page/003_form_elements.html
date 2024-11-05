@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Bileşenleri</title>
+    <style>
+        label{
+            width: 200px;
+            display: inline-block;
+        }
+        input {
+            display: inline-block;
+            width: 250px;
+            height: 22px;
+        }
+        div{
+            margin:5px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="header" style="text-align: center; color: maroon">
+      <h1>Form Bileşenleri - Kullanıcı bilgi girişleri</h1>
+    </div>
+    <div id="body">
+      <!--
+        input Type = input bileşeni türünü belirtir.
+        türler: text,radio,password,email,tel,checkbox
+        input name: form bileşeni ilgili endpointe bilgi iletirken
+        değişken adı olarak kullanılır.
+        input id -> bu tagin benzersiz numarası. 
+        label for -> ilgili değişkeni ifade ettiğini belirtmek için kullanırız, gerekli değildir.
+        -->
+      <!--
+        DİKKAT!!!!
+        inLine element -> sadece kendi hacimleri kadar yer kaplarlar ve kendilerinden sonra gelen elemente bitişik
+        şekilde görünürler. (eg:label,input etc.)
+        block -> bulundukları satırın tamamını kaplarlar. (e.g: div)
+        inline-block -> Hem inline element hem de blok element gibi davranabilen elementlerdir. 
+
+        -->
+      <div>
+        <label for="name">Adınız soyadınız</label>
+        <input type="text" name="adSoyad" id="name" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" /> 
+      </div>
+
+      <div>
+        <label for="userName">Kullanıcı adı</label>
+        <input type="text" name="userName" id="userName" /> 
+      </div>
+
+      <div>
+        <label for="sifre">Şifre</label>
+        <input type="password" name="sifre" id="sifre" /> 
+      </div> 
+
+      <div>
+        <label style="font-weight: bolder;">ilgi alanlarınız</label> <br>
+        <input type="checkbox">Yüzme <br>
+        <input type="checkbox">Kitap okumak <br>
+        <input type="checkbox">Yazılım <br>
+        <input type="checkbox">Sinema <br>
+      </div>
+
+      <label style="font-weight: bolder;">En sevdiğin yazılım dili</label> <br>
+      <input type="radio" name="yd">Java <br>
+      <input type="radio" name="yd">C# <br>
+      <input type="radio" name="yd">PHP <br>
+      <input type="radio" name="ayd">Javascript <br>  <!--eğer name aynı olmazsa, o seçeneği multi-select olarak seçebilir kullanıcı!!!-->
+
+      </div>
+
+      <div>
+        <label style="font-weight: bolder;">Hangi ilde yaşıyorsun</label>
+        <select>
+            <option>Seçiniz</option>
+            <option value="01">Adana</option>
+            <option value="31">Hatay</option>
+            <option value="41">Kocaeli</option>
+            <option value="51">Kütahya</option>
+        </select>
+           
+
+
+      </div>
+
+
+    </div>
+  </body>
+</html>

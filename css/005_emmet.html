@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+    > bir bileşenin alt kırılımlarına eklemek için kullanılır.  e.g: div>div>label
+    ^ bileşenin bir üst satırına ulaşmak için kullanırız. e.g: div>div>label^div>input:text
+    + aynı düzeyde ekleme yapmak için kullanırız
+    {} bileşenin içerisinde yer alacak metinleri eklemek için kullanırız.
+     * bir bileşenden birden fazla eklemek için kullanılır.
+     $ çoklu bileşen eklerken sıralamanın metin içerisine eklenmesini sağlar.
+     . bir bileşene class eklemek için kullanılır.-> div.box => <div class="box"><div>
+    # bir bileşene id eklemek için kullanılır. 
+    () bir bileşe ile diğer bileşenin grup şeklinde kullanımın sırasında karışmaması için kullanılır.
+
+    -->
+    <div>
+      <div>
+        <label for=""> </label>
+      </div>
+      <div>
+        <input type="text" name="" id="" />
+      </div>
+    </div>
+
+    <div>
+      <label for="">Buraya adınızı giriniz</label>
+      <input type="text" name="ad" id="ad" />
+      <button>Beni tıkla</button>
+    </div>
+
+    <!--
+    div>label+input+button yazıp üsttekinin aynısını yarattık...
+    -->
+    <div>
+      <label for=""></label>
+      <input type="text" />
+      <button></button>
+    </div>
+
+    <!--
+    ul>li{sıra$}*5 -> BU İYİMİŞ.
+    -->
+    <ul>
+      <li>sıra1</li>
+      <li>sıra2</li>
+      <li>sıra3</li>
+      <li>sıra4</li>
+      <li>sıra5</li>
+    </ul>
+  </body>
+</html>

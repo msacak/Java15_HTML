@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>007-Ornek01</title>
+    <style>
+        div{
+            margin: 10px;
+        }
+        label{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="ad" placeholder="adınız"> <br>
+    </div>
+    <div>
+        <textarea type="text" name="adres" id="adres" placeholder="adresiniz"></textarea>
+    </div>
+    <div>
+        <button onclick="uyeKayit()">Kaydet</button>
+    </div>
+    <div>
+        <label id="aciklama">Açıklama</label>
+    </div>
+
+    <script>
+        const txtAd = document.getElementById('ad'); //Bunlar değer değil, elementlerimiz.
+        const txtAdres = document.getElementById('adres');
+        const lblAciklama = document.getElementById('aciklama');
+        function uyeKayit(){
+            let metin = 'kayıt başarılı, \n ad: '
+            +txtAd.value
+            +' \nadres: '
+            +txtAdres.value;
+            lblAciklama.innerText = metin;
+        }
+    </script>
+</body>
+</html>
