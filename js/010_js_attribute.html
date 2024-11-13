@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags attribute</title>
+    <style>
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: bisque;
+            min-height: 100px;
+
+        }
+        .form-element{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <label id="message" >Muhammet Hoca ile js dersleri</label>
+    </div>
+    <div class="form-element">
+        <button onclick="renkDegistir()">Değiştir</button>
+    </div>
+
+
+    <script>
+        const lblMesaj = document.getElementById('message');
+       
+        function renkDegistir(){
+            if(lblMesaj.style.color!=='red'){
+                lblMesaj.style.color = 'red';
+            }
+            else{
+                   lblMesaj.style.color = 'blue';
+            }           
+        }
+        //Interval: belirli aralıklarla yapılacak işleri tanımlar...
+        setInterval(()=>{
+            renkDegistir();
+        },500) //500ms de bir metodu çalıştırıyor.
+
+        //timeout: belli bir süre bekledikten sonra yapılacak işleri tanımlar.
+
+        setTimeout(()=>{
+            alert('Sayfa yüklendi.')
+        },3000);
+       
+
+    </script>
+    
+</body>
+</html>

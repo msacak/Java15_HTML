@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Kullanımı</title>
+
+</head>
+<body>
+    <button onclick="mesajVer()">Butona tıklamalısın</button><br><br>
+
+    <div>
+        <label>şifre</label><br>
+        <input type="text" id="sifre" >
+    </div>
+    <br>
+    
+    <div>
+        <label>şifre doğrula</label><br>
+        <input type="text" id="re-sifre" onkeyup="sifreKontrol()">
+        <label id="uyari" style="color: red;"></label>
+    </div>
+
+
+    <script>
+
+        //Siz çağırmadıkça çalışmaz
+        function topla(s1,s2){
+            let t = s1+s2;
+            return t;
+        }
+
+        let sonuc = topla(5,4);
+        console.log(sonuc);
+
+        function mesajVer(){
+            alert('Dikkat burası önemli!!!');
+        }
+
+        function sifreKontrol(){
+            const sifre = document.getElementById('sifre');
+            const resifre = document.getElementById('re-sifre');
+            const uyari = document.getElementById('uyari');
+            if(sifre.value!==resifre.value){
+                uyari.innerText = 'Şifreler uyuşmuyor'
+            }
+            else{
+                uyari.innerText = ''
+            }
+        }
+
+        /*
+        const ifade = document.getElementById('ifade');
+        function buyukHarf(){
+            let buyukIfade = ifade.value;
+            console.log(buyukIfade.toUpperCase());
+            
+        } */
+       
+
+    </script>
+    
+</body>
+</html>

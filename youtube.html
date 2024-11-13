@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Youtube</title>
+   
+   
+    <style>
+         .search-input {
+        width: 30%;
+        padding: 10px;
+        border: 1px solid lightgray;
+        border-right: none; /* Removes the right border of the input */
+        border-radius: 20px 0 0 20px; /* Rounded corners on the left side only */
+    }
+
+    .search-button {
+        padding: 10px 20px;
+        border: 1px solid lightgray;
+        border-left: none; /* Removes the left border of the button */
+        border-radius: 0 20px 20px 0; /* Rounded corners on the right side only */
+        background-color: white;
+        cursor: pointer;
+    }
+          button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid lightgray;
+            background-color: white;
+            cursor: pointer;
+        }
+      
+        .header-div{
+         
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+           
+        }
+        .header-left{
+            flex:4;
+            color: white;
+            font-weight: bolder;
+            font-size: 150%;
+            text-align: center;
+            background-color: red;
+            display: inline;
+            border-radius: 10px;
+        
+            
+        }
+        .header-center{
+            display: flex;
+            flex: 24;
+            align-items: center;
+            justify-content: center;
+           
+            
+        }
+        .header-right{
+            display: flex;
+            justify-content: right;
+            flex: 4;
+            padding-right: 10px;
+        }
+        div.container{
+            display: flex;
+            flex-direction: row;
+            height: 95vh;
+          
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-left{
+            display: flex;
+            flex-direction: column;
+            flex: 1.5;
+     
+            height: 90%;
+            margin:10px;
+          
+
+        }
+     
+        .main-left-1{
+            display: flex;
+            flex-direction: column;
+            height: 95%;
+            flex:4;
+            border-bottom: 1px solid lightgray;
+            margin: 5px;
+        }
+        .main-left-2{
+            display: flex;
+            flex-direction: column;
+            height: 95%;
+            flex:6;
+            border-bottom: 1px solid lightgray;
+            margin: 5px;
+        }
+        .button-left{
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 80%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .button-left:hover{
+            background-color: lightgray;
+        }
+        .main-center{
+            flex:11;
+            display: flex;
+            flex-direction: column;
+        
+            height: 90%;
+            margin:10px;
+        }
+        .main-row{
+            display: flex;
+            flex-direction: row;
+            flex:2;
+        
+            height: 45%;
+            margin: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-box{
+            display: flex;
+            flex-direction: column;
+            flex:1;
+      
+            height: 90%;
+            margin: 10px;
+
+        }
+        .box-image{
+     
+            flex:10;
+           
+            margin: 5px;
+      
+        }
+        .box-title{
+            flex:2;
+            
+            margin: 5px;
+            font-weight: 800;
+            font-size: larger;
+            
+        }
+  
+   
+
+       
+   
+        
+    </style>
+</head>
+<body>
+    <div class="header-div">
+        <div class="header-left">
+            YouTube
+        </div>
+        <div class="header-center">
+            <input type="text" placeholder="Ara" class="search-input">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-right">
+            <button type="button" class="btn btn-primary">
+                 <span class="badge text-bg-secondary" style="font-weight: bolder;">Bildirimler</span>
+              </button>
+        </div>
+      
+    </div>
+
+    <div class="container">
+        <div class="main-left">
+            <div class="main-left-1">
+                <div class="main-left-1-1"><button class="button-left">Ana Sayfa</button></div>
+                <div class="main-left-1-1"><button class="button-left">Shorts</button></div>
+                <div class="main-left-1-1"><button class="button-left">Abonelikler</button></div>
+                <div class="main-left-1-1"><button class="button-left">Youtube Music</button></div>
+            </div>
+            <div class="main-left-2">
+                <div class="main-left-1-1"><button class="button-left">Geçmiş</button></div>
+                <div class="main-left-1-1"><button class="button-left">Oynatma listeleri</button></div>
+                <div class="main-left-1-1"><button class="button-left">Videolarınız</button></div>
+                <div class="main-left-1-1"><button class="button-left">Daha sonra izle</button></div>
+                <div class="main-left-1-1"><button class="button-left">Beğendiğim videolar</button></div>
+                <div class="main-left-1-1"><button class="button-left">İndirilenler</button></div>
+
+            </div>
+            <div class="main-left-1">
+                <div class="main-left-1-1" style="padding-left: 20px; font-weight: 700; font-size: larger;">Abonelikler</div>
+                <div class="main-left-1-1"><button class="button-left">Abonelik-1</button></div>
+                <div class="main-left-1-1"><button class="button-left">Abonelik-2</button></div>
+                <div class="main-left-1-1"><button class="button-left">Abonelik-3</button></div>
+                <div class="main-left-1-1"><button class="button-left">Abonelik-4</button></div>
+
+            </div>
+            <div class="main-left-1">
+                <div class="main-left-1-1" style="padding-left: 20px; font-weight: 700; font-size: larger;">Keşfet</div>
+                <div class="main-left-1-1"><button class="button-left">Trendler</button></div>
+                <div class="main-left-1-1"><button class="button-left">Müzik</button></div>
+                <div class="main-left-1-1"><button class="button-left">Canlı</button></div>
+                <div class="main-left-1-1"><button class="button-left">Oyun</button></div>
+            </div>
+        </div>
+        <div class="main-center">
+            <div class="main-row">
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+            </div>
+            <div class="main-row">
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+                <div class="main-box">
+                    <div class="box-image"><img src="https://picsum.photos/300/250"></div>
+                    <div class="box-title">Example video title</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+</body>
+</html>

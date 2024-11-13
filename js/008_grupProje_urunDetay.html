@@ -54,6 +54,12 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
         border-bottom: 1px solid black;
     
     }
+    .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -99,28 +105,39 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
     
             <div class="col-xs-9">
                 <ul class="menu-items">
-                    <li class="active">Ürün detayı</li>
-                    <li>Garanti</li>
-                    <li>Satıcı</li>
-                    <li>Sevkiyat</li>
+                    <li class="active" data-section="details">Ürün Detayları</li>
+                    <li data-section="warranty">Garanti</li>
+                    <li data-section="seller">Satıcı</li>
+                    <li data-section="shipping">Gönderim</li>
                 </ul>
                 <div style="width:100%;border-top:1px solid silver">
-                    <p id="productDescription" style="padding:15px;">
-                        <small>
-                        
-                        </small>
-                    </p>
-                </div>
-               
-                    <div class="review-section" id="reviewSection">
-                        <h4><b>Yorumlar</b></h4>
-                        <div id="reviewsContainer">
-                         
-                        </div>
+                    <div id="details" class="content-section active">
+                        <p style="padding:15px;" id="productDescription"></p>
+                        <ul id="productFeatures" class="content-list"></ul>
                     </div>
-                   
-               
-            </div>		
+                    <div id="warranty" class="content-section">
+                        <ul class="content-list">
+                            <li>Garanti Bilgisi: <span id="warrantyInfo"></span></li>
+                        </ul>
+                    </div>
+                    <div id="seller" class="content-section">
+                        <ul class="content-list">
+                            <li>Satıcı Bilgisi: <span id="productBrand"></span></li>
+                        </ul>
+                    </div>
+                    <div id="shipping" class="content-section">
+                        <ul class="content-list">
+                            <li>Gönderim Bilgisi: <span id="shippingInfo"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-section" id="reviewSection">
+            <h4><b>Yorumlar</b></h4>
+            <div id="reviewsContainer">
+             
+            </div>
         </div>
     </div>        
     
@@ -143,7 +160,7 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
                 document.getElementById('productBrand').textContent = product.brand;
                 document.getElementById('productPrice').textContent = `$${product.price}`;
                 document.getElementById('productDescription').textContent = product.description;
-              
+                
                 
              
                 
@@ -175,9 +192,19 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
                    
                     
                 });
-
-              
-
+                const featuresList = document.getElementById('productFeatures');
+                    const features = {
+                        "Ağırlık": `${product.weight} kg`,
+                        "Boyutlar": `${product.dimensions.width} x ${product.dimensions.height} x ${product.dimensions.depth} cm`,
+                        "Garanti Bilgisi": product.warrantyInformation,
+                        "Gönderim Bilgisi": product.shippingInformation,
+                        "İade Politikası": product.returnPolicy
+                    };
+                    for (const [key, value] of Object.entries(features)) {
+                        const featureItem = document.createElement('li');
+                        featureItem.textContent = `${key}: ${value}`;
+                        featuresList.appendChild(featureItem);
+                    }
 
             });
 
@@ -185,23 +212,17 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
            
             getProductDetail();
             
-
-
-
-
-
-
-
-
-
-
-
        $(document).ready(function(){
             //-- Click on detail
             $("ul.menu-items > li").on("click",function(){
                 $("ul.menu-items > li").removeClass("active");
                 $(this).addClass("active");
+
+                $(".content-section").removeClass("active");
+                $("#" + $(this).data("section")).addClass("active");
             })
+
+
 
             $(".attr,.attr2").on("click",function(){
                 var clase = $(this).attr("class");

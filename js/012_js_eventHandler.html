@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="islemYap()">Bunu Tıkla</button> <br><br>
+    <label  id="yazi">Burada bir şeyler yazmalısın</label>
+    <script>
+        function islemYap(){
+            console.log('Buton tıklandı');            
+        }
+        const labelYazi = document.getElementById('yazi');
+        const body = document.getElementById('body');
+        
+        labelYazi.addEventListener('mouseover', yaziRengi);
+        labelYazi.addEventListener('mouseleave', yaziRengiSil);
+        labelYazi.addEventListener('mousewheel', yaziyiBuyut);
+        let size = 14;
+        function yaziyiBuyut(event){
+            console.log(event);
+            if(event.deltaY <0)
+                size++;
+            else 
+                size--;
+            labelYazi.style.fontSize = size+'px';
+        }
+        
+        function yaziRengi(){
+            labelYazi.style.color = 'red';
+        }
+        function yaziRengiSil(){
+            labelYazi.style.color = 'black';
+        }
+    </script>
+</body>
+</html>
